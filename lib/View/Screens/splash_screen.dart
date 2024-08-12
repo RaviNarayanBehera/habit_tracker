@@ -32,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/habit.png',
+                'assets/images/logo.webp',
               ),
             ),
           ),
