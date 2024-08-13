@@ -12,7 +12,7 @@ Map<DateTime, int> prepHeatMapDataset(List<HabitModal> habits) {
   Map<DateTime, int> dataset = {};
 
   for (var habit in habits) {
-    for (var date in habit.complereDays) {
+    for (var date in habit.completeDays) {
       final normalizerDate = DateTime(date.year, date.month, date.day);
 
       if (dataset.containsKey(normalizerDate)) {

@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
       builder: (context) => AlertDialog(
         content: TextField(
           controller: textController,
-          decoration: const InputDecoration(hintText: 'Create a new habit'),
+          decoration: const InputDecoration(hintText: 'Create a New Habit'),
         ),
         actions: [
           MaterialButton(
@@ -211,7 +211,7 @@ class _HomePageState extends State<HomePage> {
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         final habit = currentHabits[index];
-        bool isCompletedToday = isHabitCompletedToday(habit.complereDays);
+        bool isCompletedToday = isHabitCompletedToday(habit.completeDays);
         return MyHabitTile(
           isCompled: isCompletedToday,
           text: habit.name,

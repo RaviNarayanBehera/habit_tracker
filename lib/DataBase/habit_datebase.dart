@@ -52,13 +52,13 @@ class HabitDatabase extends ChangeNotifier {
     if (habit != null) {
       await isar.writeTxn(
         () async {
-          if (isCompleted && !habit.complereDays.contains(DateTime.now())) {
+          if (isCompleted && !habit.completeDays.contains(DateTime.now())) {
             final today = DateTime.now();
 
-            habit.complereDays
+            habit.completeDays
                 .add(DateTime(today.year, today.month, today.day));
           } else {
-            habit.complereDays.removeWhere(
+            habit.completeDays.removeWhere(
               (date) =>
                   date.year == DateTime.now().year &&
                   date.month == DateTime.now().month &&

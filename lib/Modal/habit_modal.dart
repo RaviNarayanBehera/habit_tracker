@@ -7,7 +7,7 @@ class HabitModal
 
   late String name;
 
-  List<DateTime> complereDays = [
+  List<DateTime> completeDays = [
 
   ];
 }

@@ -42,7 +42,7 @@ int _habitModalEstimateSize(
     Map<Type, List<int>> allOffsets,
     ) {
   var bytesCount = offsets.last;
-  bytesCount += 3 + object.complereDays.length * 8;
+  bytesCount += 3 + object.completeDays.length * 8;
   bytesCount += 3 + object.name.length * 3;
   return bytesCount;
 }
@@ -53,7 +53,7 @@ void _habitModalSerialize(
     List<int> offsets,
     Map<Type, List<int>> allOffsets,
     ) {
-  writer.writeDateTimeList(offsets[0], object.complereDays);
+  writer.writeDateTimeList(offsets[0], object.completeDays);
   writer.writeString(offsets[1], object.name);
 }
 
@@ -64,7 +64,7 @@ HabitModal _habitModalDeserialize(
     Map<Type, List<int>> allOffsets,
     ) {
   final object = HabitModal();
-  object.complereDays = reader.readDateTimeList(offsets[0]) ?? [];
+  object.completeDays = reader.readDateTimeList(offsets[0]) ?? [];
   object.id = id;
   object.name = reader.readString(offsets[1]);
   return object;
